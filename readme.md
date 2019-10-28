@@ -1,1 +1,2 @@
-Hello this is a test of a proyect in Tecnologico de Monterrey
+# Semana_i
+Carbon LDP y Base22 proyecto de Linked Data
