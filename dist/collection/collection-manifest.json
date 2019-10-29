@@ -1,0 +1,13 @@
+{
+  "entries": [
+    "components/my-component/my-component.js",
+    "components/data-cloud/data-cloud.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.7.4",
+    "typescriptVersion": "3.6.3"
+  },
+  "collections": [],
+  "bundles": []
+}
