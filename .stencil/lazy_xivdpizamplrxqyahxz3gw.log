@@ -1,0 +1,20 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+import Fragment from 'stencil-fragment';
+export const MyComponent = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        /**
+         * The first name
+         */
+        this.data = { items: [] };
+        this.myTitle = "";
+    }
+    async printConsoleLog() {
+        console.log("method");
+    }
+    render() {
+        return (h(Fragment, null, h("div", { id: "myCanvasContainer" }, h("canvas", { width: "1000", height: "300", id: "myCanvas" }, h("p", null, "Anything in here will be replaced on browsers that support the canvas element"))), h("div", null, h("data-cloud", null))));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:my-component"; }
+};

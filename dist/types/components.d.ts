@@ -10,13 +10,7 @@ import { HTMLStencilElement, JSXBase } from './stencil.core';
 
 
 export namespace Components {
-  interface DataCloud {
-    /**
-    * The first name
-    */
-    'data': any;
-    'myTitle': string;
-  }
+  interface DataCloud {}
   interface MyComponent {
     /**
     * The first name
@@ -48,13 +42,7 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface DataCloud {
-    /**
-    * The first name
-    */
-    'data'?: any;
-    'myTitle'?: string;
-  }
+  interface DataCloud {}
   interface MyComponent {
     /**
     * The first name

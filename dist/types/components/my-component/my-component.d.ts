@@ -4,6 +4,9 @@ export declare class MyComponent {
      */
     data: any;
     myTitle: string;
+    el: HTMLElement;
+    isLoading: boolean;
     printConsoleLog(): Promise<void>;
+    componentDidLoad(): void;
     render(): any;
 }
