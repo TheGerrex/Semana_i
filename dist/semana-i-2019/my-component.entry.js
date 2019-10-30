@@ -1,5 +1,6 @@
 import { r as registerInstance, h, c as getElement } from './core-5e12a2de.js';
-import { F as Fragment } from './index-ad57864f.js';
+
+const Fragment = (props, children) => [ ...children ];
 
 const MyComponent = class {
     constructor(hostRef) {

@@ -4,10 +4,6 @@ import { CarbonLDP } from "carbonldp";
 export default function init() {
 	const carbonldp = new CarbonLDP("https://data-itesm.lab.base22.com/")
 
-
-
-
-
   carbonldp.documents.$executeSELECTQuery(
     `
     SELECT ?keywordLabel (COUNT (?Movie) AS ?movieCount)
@@ -27,12 +23,11 @@ export default function init() {
 
   const tags = document.querySelector("#tags");
   const ul = document.createElement("ul");
-  ul.appendChild(tags);
-  for(var i = 0; i < movielist.length; ++i) {
+  for(var i = 0; i < movielist.bindings.length; ++i) {
     var li = document.createElement('li');
     var a = document.createElement('a');
-    a.innerHTML = movielist[i].Movie;
-    a.appendChild(movielist[i].movieCount);
+    a.innerHTML = movielist.bindings[i].keyword;
+    a.appendChild(movielist.bindings[i].movieCount);
     a.appendChild(movielist[i].href);
     li.appendChild(a);
     ul.appendChild(li);
