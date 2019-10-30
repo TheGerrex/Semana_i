@@ -1,6 +1,7 @@
 import {Component, Prop, h,Element, State, Method} from '@stencil/core';
 import Fragment from 'stencil-fragment';
 
+
 @Component({
   tag: 'my-component',
   styleUrl: 'my-component.css'
@@ -60,7 +61,6 @@ export class MyComponent {
         catch(e) {
           // something went wrong, hide the canvas container
           document.getElementById('myCanvasContainer').style.display = 'none';
-          console.log("DD")
         }
       };
 

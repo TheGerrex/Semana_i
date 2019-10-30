@@ -28,6 +28,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "carbonldp": "^5.2.0",
     "stencil-fragment": "^1.0.1"
   }
 }
