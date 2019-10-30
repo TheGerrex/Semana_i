@@ -1,4 +1,6 @@
 import { h } from "@stencil/core";
+// import Fragment from 'stencil-fragment';
+import init from '../../../www/assets/carbonldp.js';
 export class MyComponent {
     constructor() {
         this.isLoading = true;
@@ -11,7 +13,9 @@ export class MyComponent {
         console.log("CarbonLDP");
     }
     render() {
-        return (h("div", { id: "tags" }));
+        return (init());
+        h("div", { id: "tags" });
+        ;
     }
     static get is() { return "data-cloud"; }
     static get originalStyleUrls() { return {

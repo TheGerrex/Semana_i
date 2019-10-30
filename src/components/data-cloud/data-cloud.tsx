@@ -1,6 +1,6 @@
 import {Component, Element, State, h} from '@stencil/core';
 // import Fragment from 'stencil-fragment';
-import {CarbonLDP} from "carbonldp";
+import init from '../../../www/assets/carbonldp.js';
 
 
 
@@ -24,7 +24,7 @@ export class MyComponent {
 
   render() {
    return (
-
+    init();
    <div id="tags"></div>
    );
   }
