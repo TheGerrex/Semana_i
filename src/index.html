@@ -12,9 +12,9 @@
 <body>
 
   <my-component id="myComponent" my-title="Hello world!"></my-component>
-  <data-cloud></data-cloud>
+  <data-cloud id = "myDataCloud"></data-cloud>
 
-  <script>
+<!--   <script>
     customElements.whenDefined("my-component").then(()=>{
       document.querySelector("#myComponent").componentOnReady().then((componentInstance) => {
         componentInstance.data = {items: [{name: "1"}, {name: "2"}]};
@@ -23,9 +23,20 @@
       console.log("IT WORKS!")
       });
     });
-  </script>
+  </script> -->
 
-  <script src="carbonldp.js"></script>
+  <script src="assets/bundle.js"></script>
+  <script>
+    customElements.whenDefined("data-cloud").then(()=>{
+      document.querySelector("#myDataCloud").componentOnReady().then((componentInstance) => {
+
+        window.libraryName.default(50).then((keywords) => {
+          componentInstance.data = keywords;
+
+        });
+      });
+    });
+  </script>
 
 
 </body>

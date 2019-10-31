@@ -1,9 +1,9 @@
 import { h } from "@stencil/core";
 // import Fragment from 'stencil-fragment';
-import init from '../../../www/assets/carbonldp.js';
 export class MyComponent {
     constructor() {
         this.isLoading = true;
+        this.data = [];
     }
     loadCarbon() {
         const tagCanvasScript = document.createElement("script");
@@ -13,9 +13,7 @@ export class MyComponent {
         console.log("CarbonLDP");
     }
     render() {
-        return (init());
-        h("div", { id: "tags" });
-        ;
+        return (h("div", { id: "tags" }, this.data));
     }
     static get is() { return "data-cloud"; }
     static get originalStyleUrls() { return {
@@ -23,6 +21,24 @@ export class MyComponent {
     }; }
     static get styleUrls() { return {
         "$": ["data-cloud.css"]
+    }; }
+    static get properties() { return {
+        "data": {
+            "type": "unknown",
+            "mutable": false,
+            "complexType": {
+                "original": "any[]",
+                "resolved": "any[]",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "defaultValue": "[]"
+        }
     }; }
     static get states() { return {
         "isLoading": {}

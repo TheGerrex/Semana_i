@@ -1,11 +1,21 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Stencil Component Starter</title> <script type="module" src="/build/semana-i-2019.esm.js"></script> <script nomodule="" src="/build/semana-i-2019.js"></script> </head> <body> <my-component id="myComponent" my-title="Hello world!"></my-component> <data-cloud></data-cloud> <script>customElements.whenDefined("my-component").then(()=>{
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Stencil Component Starter</title> <script type="module" src="/build/semana-i-2019.esm.js"></script> <script nomodule="" src="/build/semana-i-2019.js"></script> </head> <body> <my-component id="myComponent" my-title="Hello world!"></my-component> <data-cloud id="myDataCloud"></data-cloud> <!--   <script>
+    customElements.whenDefined("my-component").then(()=>{
       document.querySelector("#myComponent").componentOnReady().then((componentInstance) => {
         componentInstance.data = {items: [{name: "1"}, {name: "2"}]};
         componentInstance.addEventListener("myCustomEvent", (ev) => {console.log(ev.detail)});
         componentInstance.printConsoleLog();
       console.log("IT WORKS!")
       });
-    });</script> <script src="carbonldp.js"></script> <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+    });
+  </script> --> <script src="assets/bundle.js"></script> <script>customElements.whenDefined("data-cloud").then(()=>{
+      document.querySelector("#myDataCloud").componentOnReady().then((componentInstance) => {
+
+        window.libraryName.default(50).then((keywords) => {
+          componentInstance.data = keywords;
+
+        });
+      });
+    });</script> <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {
   // auto-unregister service worker during dev mode
   navigator.serviceWorker.getRegistration().then(function(registration) {
     if (registration) {

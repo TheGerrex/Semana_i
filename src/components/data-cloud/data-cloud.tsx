@@ -1,6 +1,6 @@
 import {Component, Element, State, h} from '@stencil/core';
 // import Fragment from 'stencil-fragment';
-import init from '../../../www/assets/carbonldp.js';
+
 
 
 
@@ -12,6 +12,7 @@ export class MyComponent {
 
   @Element() el: HTMLElement;
   @State() isLoading: boolean = true;
+  @Prop() data = [];
 
   loadCarbon(){
     const tagCanvasScript = document.createElement("script");
@@ -24,8 +25,7 @@ export class MyComponent {
 
   render() {
    return (
-    init();
-   <div id="tags"></div>
+   <div id="tags">{this.data}</div>
    );
   }
 }
