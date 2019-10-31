@@ -12,8 +12,20 @@ export class MyComponent {
         this.el.appendChild(tagCanvasScript);
         console.log("CarbonLDP");
     }
+    makeList() {
+        const divT = document.querySelector("#tags");
+        const ul = document.createElement("ul");
+        divT.appendChild(ul);
+        data.map(function (data, bindings) {
+            const lis = document.createElement("li");
+            lis.innerHTML = `<a href="#" data-weight=` + data.bindings["movieCount"] + `>` + data.bindings["keywordLabel"] + `</a>`;
+            ul.appendChild(lis);
+            console.log("IT");
+        });
+    }
     render() {
-        return (h("div", { id: "tags" }, this.data));
+        return (h("div", { id: "tags" },
+            h("ul", null, this.makeList())));
     }
     static get is() { return "data-cloud"; }
     static get originalStyleUrls() { return {

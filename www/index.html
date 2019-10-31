@@ -10,12 +10,25 @@
   </script> --> <script src="assets/bundle.js"></script> <script>customElements.whenDefined("data-cloud").then(()=>{
       document.querySelector("#myDataCloud").componentOnReady().then((componentInstance) => {
 
-        window.libraryName.default(50).then((keywords) => {
+        window.libraryName.default().then((keywords) => {
           componentInstance.data = keywords;
+          console.log(keywords);
 
         });
       });
-    });</script> <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+    });</script> <!-- <script>
+    customElements.whenDefined("data-cloud").then(()=>{
+    const divT = document.querySelector("#tags");
+    var ul = document.createElement("ul");
+    divT.appendChild(ul);
+    map(function(data) {
+      const lis = document.createElement("li")
+      lis.innerHTML = `<a href="#" data-weight=` + data.bindings["movieCount"]+ `>` + data.bindings["keywordLabel"] + `</a>`;
+      ul.appendChild(lis);
+      console.log("IT");
+    })
+  })
+  </script> --> <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {
   // auto-unregister service worker during dev mode
   navigator.serviceWorker.getRegistration().then(function(registration) {
     if (registration) {

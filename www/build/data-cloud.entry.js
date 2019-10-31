@@ -13,8 +13,19 @@ const MyComponent = class {
         this.el.appendChild(tagCanvasScript);
         console.log("CarbonLDP");
     }
+    makeList() {
+        const divT = document.querySelector("#tags");
+        const ul = document.createElement("ul");
+        divT.appendChild(ul);
+        data.map(function (data, bindings) {
+            const lis = document.createElement("li");
+            lis.innerHTML = `<a href="#" data-weight=` + data.bindings["movieCount"] + `>` + data.bindings["keywordLabel"] + `</a>`;
+            ul.appendChild(lis);
+            console.log("IT");
+        });
+    }
     render() {
-        return (h("div", { id: "tags" }, this.data));
+        return (h("div", { id: "tags" }, h("ul", null, this.makeList())));
     }
     get el() { return getElement(this); }
     static get style() { return "body {\n  background: #08454a;\n  font-family: \'Open Sans\', sans-serif;\n}\n\n#myCanvasContainer {\n  background: #000000;\n  width: 1000px;\n  height: 300px;\n  border-radius: 10px;\n}\nul {\n  display: none;\n}\n\n#tags {\n  color: white;\n  font-family: \'Roboto\';\n}"; }

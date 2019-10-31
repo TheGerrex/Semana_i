@@ -23,9 +23,26 @@ export class MyComponent {
     console.log("CarbonLDP");
   }
 
+  makeList() {
+    const divT = document.querySelector("#tags");
+    const ul = document.createElement("ul");
+    divT.appendChild(ul);
+    data.map(function(data.bindings) {
+      const lis = document.createElement("li")
+      lis.innerHTML = `<a href="#" data-weight=` + data.bindings["movieCount"]+ `>` + data.bindings["keywordLabel"] + `</a>`;
+      ul.appendChild(lis);
+      console.log("IT");
+    })
+  }
+
   render() {
    return (
-   <div id="tags">{this.data}</div>
+
+   <div id="tags">
+    <ul>
+      {this.makeList()}
+    </ul>
+   </div>
    );
   }
 }
