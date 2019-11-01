@@ -17,7 +17,7 @@ const MyComponent = class {
         TagCanvas.Reload("myCanvas");
     }
     makeList() {
-        console.log('here', this.data);
+        console.log('Data', this.data);
         return this.data.map((item) => (h("li", null, h("a", { href: "#", "data-weight": item.movieCounter }, item.keywordLabel))));
         /*const divT = document.querySelector("#tags");
         const ul = document.createElement("ul");

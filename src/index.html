@@ -7,6 +7,7 @@
 
   <script type="module" src="/build/semana-i-2019.esm.js"></script>
   <script nomodule src="/build/semana-i-2019.js"></script>
+  <script src="assets/bundle.js"></script>
 
 </head>
 <body>
@@ -14,18 +15,6 @@
   <my-component id="myComponent" my-title="Hello world!"></my-component>
   <data-cloud id = "myDataCloud"></data-cloud>
 
-<!--   <script>
-    customElements.whenDefined("my-component").then(()=>{
-      document.querySelector("#myComponent").componentOnReady().then((componentInstance) => {
-        componentInstance.data = {items: [{name: "1"}, {name: "2"}]};
-        componentInstance.addEventListener("myCustomEvent", (ev) => {console.log(ev.detail)});
-        componentInstance.printConsoleLog();
-      console.log("IT WORKS!")
-      });
-    });
-  </script> -->
-
-  <script src="assets/bundle.js"></script>
   <script>
     customElements.whenDefined("data-cloud").then(()=>{
       document.querySelector("#myDataCloud").componentOnReady().then((componentInstance) => {
@@ -37,21 +26,6 @@
       });
     });
   </script>
-
-  <!-- <script>
-    customElements.whenDefined("data-cloud").then(()=>{
-    const divT = document.querySelector("#tags");
-    var ul = document.createElement("ul");
-    divT.appendChild(ul);
-    map(function(data) {
-      const lis = document.createElement("li")
-      lis.innerHTML = `<a href="#" data-weight=` + data.bindings["movieCount"]+ `>` + data.bindings["keywordLabel"] + `</a>`;
-      ul.appendChild(lis);
-      console.log("IT");
-    })
-  })
-  </script> -->
-
 
 </body>
 </html>

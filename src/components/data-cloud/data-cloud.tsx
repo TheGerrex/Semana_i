@@ -28,7 +28,7 @@ export class MyComponent {
   }
 
   makeList() {
-    console.log('here', this.data);
+    console.log('Data', this.data);
     return this.data.map((item) => (<li><a href="#" data-weight={item.movieCounter}>{item.keywordLabel}</a></li>))
 
     /*const divT = document.querySelector("#tags");
