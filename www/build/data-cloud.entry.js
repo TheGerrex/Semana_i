@@ -1,4 +1,4 @@
-import { r as registerInstance, h, c as getElement } from './core-5e12a2de.js';
+import { r as registerInstance, h, c as getElement } from './core-de75d7a0.js';
 
 const MyComponent = class {
     constructor(hostRef) {
@@ -13,8 +13,12 @@ const MyComponent = class {
         this.el.appendChild(tagCanvasScript);
         console.log("CarbonLDP");
     }
+    componentDidUpdate() {
+        TagCanvas.Reload("myCanvas");
+    }
     makeList() {
         console.log('here', this.data);
+        return this.data.map((item) => (h("li", null, h("a", { href: "#", "data-weight": item.movieCounter }, item.keywordLabel))));
         /*const divT = document.querySelector("#tags");
         const ul = document.createElement("ul");
         divT.appendChild(ul);
@@ -27,9 +31,8 @@ const MyComponent = class {
         }*/
     }
     render() {
-        this.makeList();
         if (this.data.length > 0) {
-            return (h("div", { id: "tags" }, h("ul", null, h("li", null, h("a", { href: "#", "data-weight": "14" }, this.data[0].keywordLabel)))));
+            return (h("div", { id: "tags" }, h("ul", null, this.makeList())));
         }
     }
     get el() { return getElement(this); }

@@ -1,0 +1,29 @@
+import { registerInstance as __stencil_registerInstance, getElement as __stencil_getElement } from "@stencil/core";
+import { h } from "@stencil/core";
+export const MyComponent = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.isLoading = true;
+        this.data = [];
+    }
+    loadCarbon() {
+        const tagCanvasScript = document.createElement("script");
+        tagCanvasScript.onload = () => { this.isLoading = false; };
+        tagCanvasScript.src = "carbonldp.js";
+        this.el.appendChild(tagCanvasScript);
+        console.log("CarbonLDP");
+    }
+    //makeList() {
+    //console.log('here', this.data);
+    makeList() {
+        return this.data.map((item) => (h("li", null, h("a", { href: "#", "data-weight": "23" }, "algo"))));
+    }
+    get el() { return __stencil_getElement(this); }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:data-cloud"; }
+};
+render();
+{
+    if (this.data) {
+        (h("div", { id: "tags" }, h("ul", null, this.makeList())));
+    }
+}

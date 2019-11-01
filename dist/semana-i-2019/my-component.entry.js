@@ -1,4 +1,4 @@
-import { r as registerInstance, h, c as getElement } from './core-5e12a2de.js';
+import { r as registerInstance, h, c as getElement } from './core-de75d7a0.js';
 
 const Fragment = (props, children) => [ ...children ];
 

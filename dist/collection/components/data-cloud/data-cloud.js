@@ -12,8 +12,13 @@ export class MyComponent {
         this.el.appendChild(tagCanvasScript);
         console.log("CarbonLDP");
     }
+    componentDidUpdate() {
+        TagCanvas.Reload("myCanvas");
+    }
     makeList() {
         console.log('here', this.data);
+        return this.data.map((item) => (h("li", null,
+            h("a", { href: "#", "data-weight": item.movieCounter }, item.keywordLabel))));
         /*const divT = document.querySelector("#tags");
         const ul = document.createElement("ul");
         divT.appendChild(ul);
@@ -26,12 +31,9 @@ export class MyComponent {
         }*/
     }
     render() {
-        this.makeList();
         if (this.data.length > 0) {
             return (h("div", { id: "tags" },
-                h("ul", null,
-                    h("li", null,
-                        h("a", { href: "#", "data-weight": "14" }, this.data[0].keywordLabel)))));
+                h("ul", null, this.makeList())));
         }
     }
     static get is() { return "data-cloud"; }
@@ -43,11 +45,11 @@ export class MyComponent {
     }; }
     static get properties() { return {
         "data": {
-            "type": "unknown",
+            "type": "any",
             "mutable": false,
             "complexType": {
-                "original": "any[]",
-                "resolved": "any[]",
+                "original": "any",
+                "resolved": "any",
                 "references": {}
             },
             "required": false,
@@ -56,6 +58,8 @@ export class MyComponent {
                 "tags": [],
                 "text": ""
             },
+            "attribute": "data",
+            "reflect": false,
             "defaultValue": "[]"
         }
     }; }

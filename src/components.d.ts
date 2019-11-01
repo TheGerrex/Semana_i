@@ -11,7 +11,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface DataCloud {
-    'data': any[];
+    'data': any;
   }
   interface MyComponent {
     /**
@@ -45,7 +45,7 @@ declare global {
 
 declare namespace LocalJSX {
   interface DataCloud {
-    'data'?: any[];
+    'data'?: any;
   }
   interface MyComponent {
     /**

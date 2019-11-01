@@ -12,7 +12,7 @@ export class MyComponent {
 
   @Element() el: HTMLElement;
   @State() isLoading: boolean = true;
-  @Prop() data = [];
+  @Prop() data: any = [];
 
   loadCarbon(){
     const tagCanvasScript = document.createElement("script");
@@ -23,8 +23,14 @@ export class MyComponent {
     console.log("CarbonLDP");
   }
 
+  componentDidUpdate() {
+    TagCanvas.Reload("myCanvas");
+  }
+
   makeList() {
     console.log('here', this.data);
+    return this.data.map((item) => (<li><a href="#" data-weight={item.movieCounter}>{item.keywordLabel}</a></li>))
+
     /*const divT = document.querySelector("#tags");
     const ul = document.createElement("ul");
     divT.appendChild(ul);
@@ -38,16 +44,15 @@ export class MyComponent {
   }
 
   render() {
-    this.makeList()
-      if(this.data.length > 0) {
-        return (
+    if (this.data.length > 0) {
+      return (
 
-   <div id="tags">
-    <ul>
-      <li><a href="#" data-weight="14">{this.data[0].keywordLabel}</a></li>
-    </ul>
-   </div>
-   );
-      }
+        <div id="tags">
+          <ul>
+            {this.makeList()}
+          </ul>
+        </div>
+      )
+    }
   }
 }
