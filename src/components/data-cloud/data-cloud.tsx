@@ -1,4 +1,4 @@
-import {Component, Element, State, h} from '@stencil/core';
+import {Component, Element, State, h, Prop} from '@stencil/core';
 // import Fragment from 'stencil-fragment';
 
 
@@ -24,25 +24,30 @@ export class MyComponent {
   }
 
   makeList() {
-    const divT = document.querySelector("#tags");
+    console.log('here', this.data);
+    /*const divT = document.querySelector("#tags");
     const ul = document.createElement("ul");
     divT.appendChild(ul);
-    data.map(function(data.bindings) {
+    if(this.data.length > 0) {
+      this.data.map((obj) => {
       const lis = document.createElement("li")
-      lis.innerHTML = `<a href="#" data-weight=` + data.bindings["movieCount"]+ `>` + data.bindings["keywordLabel"] + `</a>`;
+      lis.innerHTML = `<a href="#" data-weight=` + obj["movieCount"]+ `>` + obj["keywordLabel"] + `</a>`;
       ul.appendChild(lis);
-      console.log("IT");
     })
+    }*/
   }
 
   render() {
-   return (
+    this.makeList()
+      if(this.data.length > 0) {
+        return (
 
    <div id="tags">
     <ul>
-      {this.makeList()}
+      <li><a href="#" data-weight="14">{this.data[0].keywordLabel}</a></li>
     </ul>
    </div>
    );
+      }
   }
 }

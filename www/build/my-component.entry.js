@@ -52,7 +52,7 @@ const MyComponent = class {
             }
         }
         ;
-        return (h(Fragment, null, h("div", { id: "myCanvasContainer" }, h("canvas", { width: "1000", height: "300", id: "myCanvas" }, h("p", null, "Anything in here will be replaced on browsers that support the canvas element"))), h("div", null, h("data-cloud", null))));
+        return (h(Fragment, null, h("div", { id: "myCanvasContainer" }, h("canvas", { width: "1000", height: "300", id: "myCanvas" }, h("p", null, "Anything in here will be replaced on browsers that support the canvas element"))), h("data-cloud", null)));
     }
     get el() { return getElement(this); }
     static get style() { return ""; }

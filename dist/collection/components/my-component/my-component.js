@@ -53,8 +53,7 @@ export class MyComponent {
             h("div", { id: "myCanvasContainer" },
                 h("canvas", { width: "1000", height: "300", id: "myCanvas" },
                     h("p", null, "Anything in here will be replaced on browsers that support the canvas element"))),
-            h("div", null,
-                h("data-cloud", null))));
+            h("data-cloud", null)));
     }
     static get is() { return "my-component"; }
     static get originalStyleUrls() { return {

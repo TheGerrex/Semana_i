@@ -1,8 +1,8 @@
-import { r as registerInstance, h, c as getElement } from './core-5e12a2de.js';
-
-const MyComponent = class {
+import { registerInstance as __stencil_registerInstance, getElement as __stencil_getElement } from "@stencil/core";
+import { h } from "@stencil/core";
+export const MyComponent = class {
     constructor(hostRef) {
-        registerInstance(this, hostRef);
+        __stencil_registerInstance(this, hostRef);
         this.isLoading = true;
         this.data = [];
     }
@@ -28,12 +28,8 @@ const MyComponent = class {
     }
     render() {
         this.makeList();
-        if (this.data.length > 0) {
-            return (h("div", { id: "tags" }, h("ul", null, h("li", null, h("a", { href: "#", "data-weight": "14" }, this.data[0].keywordLabel)))));
-        }
+        return (h("div", { id: "tags" }, h("ul", null, "(", h("li", null, h("a", { href: "#", "data-weight": "14" }, this.data[0].keywordlabel, "}")), ")")));
     }
-    get el() { return getElement(this); }
-    static get style() { return "body {\n  background: #08454a;\n  font-family: \'Open Sans\', sans-serif;\n}\n\n#myCanvasContainer {\n  background: #000000;\n  width: 1000px;\n  height: 300px;\n  border-radius: 10px;\n}\nul {\n  display: none;\n}\n\n#tags {\n  color: white;\n  font-family: \'Roboto\';\n}"; }
+    get el() { return __stencil_getElement(this); }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:data-cloud"; }
 };
-
-export { MyComponent as data_cloud };

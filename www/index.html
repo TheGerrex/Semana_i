@@ -11,8 +11,7 @@
       document.querySelector("#myDataCloud").componentOnReady().then((componentInstance) => {
 
         window.libraryName.default().then((keywords) => {
-          componentInstance.data = keywords;
-          console.log(keywords);
+          componentInstance.data = keywords.bindings;
 
         });
       });

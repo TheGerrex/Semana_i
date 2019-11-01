@@ -71,9 +71,7 @@ export class MyComponent {
           <p>Anything in here will be replaced on browsers that support the canvas element</p>
         </canvas>
       </div>
-      <div>
       <data-cloud></data-cloud>
-      </div>
       </Fragment>
 
     );
